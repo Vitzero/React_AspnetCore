@@ -6,17 +6,27 @@ function App() {
       id: 0,
       descricao: 'Primeira atividade',
     },
+    {
+      id: 1,
+      descricao: 'segunda atividade',
+    },
+    {
+      id: 2,
+      descricao: 'terceira atividade',
+    },
   ];
 
   return(
     <div className='mt-3'>
-     
+      <form>
+        <input id="id" type="text" placeholder='id'></input>
+        <input id="descricao" type="text" placeholder='informe a descrição'></input>
+        <button > Add </button>
+      </form>
       <ul class="list-group">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
+        {atividades.map( x => (
+          <li key={x.id} class="list-group-item">{x.id} {x.descricao}</li>
+        ))}
       </ul>
 
     </div>
